@@ -35,10 +35,10 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden scroll-optimized">
       {/* Background Elements */}
-      <Parallax translateY={[30, -30]} className="absolute top-0 right-0 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl" />
-      <Parallax translateY={[-30, 30]} className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/3 rounded-full blur-3xl opacity-50" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/3 rounded-full blur-3xl opacity-50" />
 
       <div className="container-custom">
         <motion.div
@@ -60,28 +60,28 @@ const About = () => {
             className="w-24 h-1 bg-gradient-to-r from-primary-600 to-secondary-600 mx-auto mb-12 rounded-full"
           />
           
-          <Parallax speed={-3}>
+          <div>
             <motion.div variants={itemVariants} className="card p-8 md:p-10">
               <div className="flex flex-col md:flex-row gap-8">
                 <div className="md:w-1/3">
-                  <Parallax rotateY={[-10, 10]}>
+                  <div>
                     <motion.div 
                       className="relative rounded-xl overflow-hidden"
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{ scale: 1.01 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-secondary-500/20 animate-pulse-slow"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-secondary-500/10"></div>
                       <img 
                         src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" 
                         alt="Raj Srivastava working" 
                         className="relative z-10 w-full h-full object-cover"
                       />
                     </motion.div>
-                  </Parallax>
+                  </div>
                 </div>
                 
                 <div className="md:w-2/3">
-                  <Parallax translateX={[5, -5]}>
+                  <div>
                     <h3 className="text-2xl font-bold text-white mb-4">
                       Passionate Technologist & Problem Solver
                     </h3>
@@ -97,38 +97,38 @@ const About = () => {
                     <div className="flex flex-wrap gap-3">
                       <motion.span 
                         className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 rounded-full text-sm font-semibold"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                       >
                         Problem Solver
                       </motion.span>
                       <motion.span 
                         className="px-3 py-1 bg-secondary-100 dark:bg-secondary-900/30 text-secondary-800 dark:text-secondary-300 rounded-full text-sm font-semibold"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                       >
                         Fast Learner
                       </motion.span>
                       <motion.span 
                         className="px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-800 dark:text-accent-300 rounded-full text-sm font-semibold"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                       >
                         Team Player
                       </motion.span>
                       <motion.span 
                         className="px-3 py-1 bg-success-100 dark:bg-success-900/30 text-success-800 dark:text-success-300 rounded-full text-sm font-semibold"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         transition={{ type: "spring", stiffness: 400, damping: 17 }}
                       >
                         Detail Oriented
                       </motion.span>
                     </div>
-                  </Parallax>
+                  </div>
                 </div>
               </div>
             </motion.div>
-          </Parallax>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -35,32 +35,22 @@ const SkillsSection = () => {
   }
 
   return (
-    <section id="skills" className="section-padding relative overflow-hidden">
+    <section id="skills" className="section-padding relative overflow-hidden scroll-optimized">
       {/* Subtle Background Elements */}
-      <Parallax translateY={[40, -40]} className="absolute top-20 left-0 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl" />
-      <Parallax translateY={[-40, 40]} className="absolute bottom-20 right-0 w-96 h-96 bg-secondary-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-0 w-96 h-96 bg-primary-500/3 rounded-full blur-3xl opacity-50" />
+      <div className="absolute bottom-20 right-0 w-96 h-96 bg-secondary-500/3 rounded-full blur-3xl opacity-50" />
       
       {/* Minimal futuristic elements */}
-      <motion.div
-        className="absolute top-40 right-10 border border-accent-500/10 rounded-lg rotate-45"
+      <div
+        className="absolute top-40 right-10 border border-accent-500/5 rounded-lg rotate-45 opacity-10"
         style={{ 
           width: 'clamp(1.5rem, 4vw, 2rem)', 
           height: 'clamp(1.5rem, 4vw, 2rem)' 
         }}
-        animate={{
-          rotate: [45, 405],
-          scale: [1, 1.05, 1],
-          opacity: [0.1, 0.2, 0.1]
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
       />
 
       <div className="container-custom">
-        <Parallax speed={-5}>
+        <div>
           <motion.div
             ref={ref}
             initial="hidden"
@@ -90,19 +80,12 @@ const SkillsSection = () => {
               Hover over each skill to see a unique animation that visually represents it.
             </motion.p>
           </motion.div>
-        </Parallax>
+        </div>
         
         {/* Enhanced responsive grid */}
         <div className="skill-grid relative z-10">
           {skillsData.map((skill, index) => (
-            <Parallax
-              key={index}
-              translateY={[8, -8]}
-              scale={[0.99, 1.01]}
-              easing="easeInQuad"
-            >
-              <SkillCard skill={skill} index={index} />
-            </Parallax>
+            <SkillCard key={index} skill={skill} index={index} />
           ))}
         </div>
       </div>
