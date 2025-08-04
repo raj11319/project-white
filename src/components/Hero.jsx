@@ -101,7 +101,7 @@ const Hero = () => {
               <motion.span 
                 variants={itemVariants}
                 className="text-primary-400 font-semibold block mb-2"
-                style={{ fontSize: 'clamp(1rem, 3vw, 1.25rem)' }}
+                style={{ fontSize: 'clamp(1.125rem, 3.5vw, 1.5rem)' }}
               >
                 Hello, I'm
               </motion.span>
@@ -109,7 +109,7 @@ const Hero = () => {
               <motion.h1 
                 variants={itemVariants}
                 className="font-bold mb-4 lg:mb-6"
-                style={{ fontSize: 'clamp(2.5rem, 8vw, 5rem)' }}
+                style={{ fontSize: 'clamp(3rem, 10vw, 6rem)' }}
               >
                 <span className="text-gradient block">
                   Raj Srivastava
@@ -119,7 +119,7 @@ const Hero = () => {
               <motion.div 
                 variants={itemVariants}
                 className="text-gray-200 mb-6 lg:mb-8 leading-relaxed font-medium"
-                style={{ fontSize: 'clamp(1rem, 3vw, 1.5rem)' }}
+                style={{ fontSize: 'clamp(1.25rem, 4vw, 1.75rem)' }}
               >
                 <span className="block mb-2">A passionate technologist with expertise in </span>
                 <motion.span 
@@ -132,7 +132,7 @@ const Hero = () => {
                   {currentText}
                   <motion.span 
                     className="inline-block w-0.5 bg-current ml-1"
-                    style={{ height: 'clamp(1rem, 3vw, 1.5rem)' }}
+                    style={{ height: 'clamp(1.25rem, 4vw, 1.75rem)' }}
                     animate={{ opacity: [1, 0] }}
                     transition={{ duration: 0.8, repeat: Infinity }}
                   />
