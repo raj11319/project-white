@@ -70,13 +70,11 @@ const Hero = () => {
   const imageVariants = {
     hidden: { 
       opacity: 0, 
-      scale: 0.8,
-      rotate: -10
+      scale: 0.9
     },
     visible: { 
       opacity: 1, 
       scale: 1,
-      rotate: 0,
       transition: {
         duration: 1,
         ease: [0.16, 1, 0.3, 1],
@@ -183,10 +181,9 @@ const Hero = () => {
                 className="absolute -inset-2 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-full blur-xl opacity-15"
                 animate={{ 
                   scale: [1, 1.1, 1],
-                  rotate: [0, 180, 360]
                 }}
                 transition={{ 
-                  duration: 12, 
+                  duration: 8, 
                   repeat: Infinity,
                   ease: "linear"
                 }}
@@ -195,8 +192,7 @@ const Hero = () => {
               <motion.div 
                 className="relative bg-gray-800/90 backdrop-blur-lg rounded-full overflow-hidden p-2 shadow-xl subtle-border"
                 whileHover={{ 
-                  scale: 1.03,
-                  rotate: 1
+                  scale: 1.02
                 }}
                 transition={{ 
                   type: "spring", 
@@ -208,7 +204,7 @@ const Hero = () => {
                   src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" 
                   alt="Raj Srivastava" 
                   className="w-full h-auto rounded-full"
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 />
               </motion.div>
