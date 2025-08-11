@@ -205,7 +205,7 @@ const Hero = () => {
                 }}
               >
                 <motion.img 
-                  src="/images/raj_profile.jpg" 
+                  src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" 
                   alt="Raj Srivastava" 
                   className="w-full h-auto rounded-full"
                   whileHover={{ scale: 1.05 }}
