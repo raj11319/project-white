@@ -2,26 +2,25 @@ import React, { useState, useEffect, useRef } from 'react'
 
 const ScrollProgress = () => {
   const [scrolled, setScrolled] = useState(0)
-  const ticking = useRef(false)
+  const rafRef = useRef()
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!ticking.current) {
-        requestAnimationFrame(() => {
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-          const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
-          
-          if (scrollHeight > 0) {
-            const progress = (scrollTop / scrollHeight) * 100
-            setScrolled(Math.min(Math.max(progress, 0), 100))
-          }
-          
-          ticking.current = false
-        })
-        
-        ticking.current = true
+      // Cancel previous animation frame
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
       }
 
+      // Use requestAnimationFrame for smooth updates
+      rafRef.current = requestAnimationFrame(() => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+        
+        if (scrollHeight > 0) {
+          const progress = (scrollTop / scrollHeight) * 100
+          setScrolled(Math.min(Math.max(progress, 0), 100))
+        }
+      })
     }
 
     // Initial call
@@ -33,6 +32,9 @@ const ScrollProgress = () => {
     // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll)
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+      }
     }
   }, [])
 
@@ -46,8 +48,8 @@ const ScrollProgress = () => {
         style={{ 
           width: `${scrolled}%`,
           transformOrigin: 'left center',
-          boxShadow: '0 0 4px rgba(59, 130, 246, 0.3)',
-          transition: 'width 0.1s ease-out',
+          boxShadow: '0 0 8px rgba(59, 130, 246, 0.4)',
+          transition: 'none', // Remove CSS transition for smoother animation
           willChange: 'width' // Optimize for width changes
         }}
       />

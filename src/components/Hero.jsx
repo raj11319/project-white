@@ -86,7 +86,7 @@ const Hero = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-safe-top relative overflow-hidden scroll-optimized">
+    <section id="home" className="min-h-screen flex items-center pt-safe-top relative overflow-hidden">
       {/* Enhanced responsive padding */}
       <div className="container-custom section-padding relative z-10">
         <motion.div 
@@ -97,7 +97,7 @@ const Hero = () => {
         >
           {/* Content Section - Enhanced responsive layout */}
           <div className="w-full lg:w-1/2 text-center lg:text-left order-2 lg:order-1">
-            <div>
+            <Parallax translateY={[15, -15]} speed={-2}>
               <motion.span 
                 variants={itemVariants}
                 className="text-primary-400 font-semibold block mb-2"
@@ -165,22 +165,38 @@ const Hero = () => {
                   <span className="relative z-10">Get In Touch</span>
                 </motion.a>
               </motion.div>
-            </div>
+            </Parallax>
           </div>
           
           {/* Image Section - Enhanced responsive layout */}
-          <div className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2">
+          <Parallax 
+            translateY={[-10, 10]} 
+            speed={-1} 
+            className="w-full lg:w-1/2 flex justify-center order-1 lg:order-2"
+          >
             <motion.div 
               variants={imageVariants}
               className="relative w-full max-w-sm lg:max-w-md"
             >
               {/* Subtle glow effect with reduced intensity */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-full blur-xl opacity-10" />
+              <motion.div 
+                className="absolute -inset-2 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-full blur-xl opacity-15"
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 180, 360]
+                }}
+                transition={{ 
+                  duration: 12, 
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
               
               <motion.div 
                 className="relative bg-gray-800/90 backdrop-blur-lg rounded-full overflow-hidden p-2 shadow-xl subtle-border"
                 whileHover={{ 
-                  scale: 1.02
+                  scale: 1.03,
+                  rotate: 1
                 }}
                 transition={{ 
                   type: "spring", 
@@ -192,12 +208,12 @@ const Hero = () => {
                   src="/images/raj_profile.jpg" 
                   alt="Raj Srivastava" 
                   className="w-full h-auto rounded-full"
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 />
               </motion.div>
             </motion.div>
-          </div>
+          </Parallax>
         </motion.div>
         
         {/* Enhanced responsive scroll indicator */}
@@ -225,7 +241,7 @@ const Hero = () => {
               width: 'clamp(1.5rem, 4vw, 2rem)', 
               height: 'clamp(2.5rem, 6vw, 3rem)' 
             }}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.05 }}
           >
             <motion.div
               className="bg-primary-400 rounded-full mt-2"

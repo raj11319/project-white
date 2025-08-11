@@ -65,10 +65,10 @@ const Certificates = () => {
   }
 
   return (
-    <section id="certificates" className="py-20 relative overflow-hidden scroll-optimized">
+    <section id="certificates" className="py-20 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-500/3 rounded-full blur-3xl opacity-50" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/3 rounded-full blur-3xl opacity-50" />
+      <Parallax translateY={[30, -30]} className="absolute top-0 right-0 w-96 h-96 bg-primary-500/5 rounded-full blur-3xl" />
+      <Parallax translateY={[-30, 30]} className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500/5 rounded-full blur-3xl" />
 
       <div className="container-custom">
         <motion.div
@@ -95,15 +95,17 @@ const Certificates = () => {
                 key={index}
                 variants={itemVariants}
                 className="card overflow-hidden hover-lift"
-                whileHover={{ y: -2 }}
-                transition={{ duration: 0.2 }}
+                whileHover={{ 
+                  y: -5,
+                  transition: { duration: 0.3 }
+                }}
               >
                 <div className="relative h-40 overflow-hidden">
                   <motion.img 
                     src={cert.image} 
                     alt={cert.title}
                     className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.02 }}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -126,7 +128,7 @@ const Certificates = () => {
                   <motion.a 
                     href={cert.link}
                     className="inline-flex items-center text-primary-400 hover:text-primary-300 transition-colors text-sm font-medium"
-                    whileHover={{ x: 2 }}
+                    whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   >
                     View Certificate 
