@@ -216,7 +216,7 @@ const Header = () => {
                 >
                   <button
                     onClick={() => handleNavigation(link.section)}
-                    className="font-medium text-gray-700 dark:text-gray-300 relative group"
+                    className="font-medium text-gray-700 dark:text-gray-300 relative group cursor-pointer"
                     style={{ fontSize: 'clamp(0.875rem, 2vw, 1rem)' }}
                   >
                     {link.name}
@@ -235,7 +235,7 @@ const Header = () => {
             <div className="flex items-center" style={{ gap: 'clamp(0.75rem, 2vw, 1rem)' }}>
               <motion.button
                 onClick={toggleTheme}
-                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 relative overflow-hidden"
+                className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 relative overflow-hidden cursor-pointer"
                 style={{ 
                   width: 'clamp(2.5rem, 6vw, 3rem)', 
                   height: 'clamp(2.5rem, 6vw, 3rem)' 
@@ -273,7 +273,7 @@ const Header = () => {
               </motion.button>
               
               <motion.button 
-                className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300"
+                className="md:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 cursor-pointer"
                 style={{ 
                   width: 'clamp(2.5rem, 6vw, 3rem)', 
                   height: 'clamp(2.5rem, 6vw, 3rem)' 

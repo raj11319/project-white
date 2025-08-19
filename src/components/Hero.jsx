@@ -145,7 +145,7 @@ const Hero = () => {
               >
                 <motion.a 
                   href="#skills" 
-                  className="btn-primary group relative overflow-hidden text-center"
+                  className="btn-primary group relative overflow-hidden text-center cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -155,7 +155,7 @@ const Hero = () => {
                 
                 <motion.a 
                   href="#contact" 
-                  className="btn-professional text-center"
+                  className="btn-professional text-center cursor-pointer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}

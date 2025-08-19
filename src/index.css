@@ -664,6 +664,15 @@ video {
   }
 }
 
+/* Cursor styles for better magnetic effect */
+.cursor-magnetic {
+  transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cursor-magnetic:hover {
+  transform: scale(1.05);
+}
+
 /* Optimized transforms for better performance */
 .transform-gpu {
   transform: translateZ(0);

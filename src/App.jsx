@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import Loader from './components/Loader'
 import ScrollProgress from './components/ScrollProgress'
 import SkillDetailPage from './components/skills/SkillDetailPage'
+import MagneticCursor from './components/MagneticCursor'
 import { AnimatePresence, motion } from 'framer-motion'
 
 // Scroll to top component
@@ -309,6 +310,7 @@ const MainContent = () => {
 function App() {
   return (
     <Router>
+      <MagneticCursor />
       <MainContent />
     </Router>
   )

@@ -102,7 +102,7 @@ const SkillCard = ({ skill, index }) => {
       viewport={{ once: true, amount: 0.2 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="h-full relative overflow-hidden group"
+      className="h-full relative overflow-hidden group skill-card"
       style={{ perspective: '1000px' }}
     >
       <Link 
